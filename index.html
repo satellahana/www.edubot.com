@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edubot</title>
+    <style>
+        .chat-container {
+            width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #f7f9f8;
+            background-color: #b8a3a3;
+            font-family: Arial, sans-serif;
+        }
+
+        .user {
+            color: rgb(248, 248, 248);
+        }
+
+        .bot {
+            color: rgb(248, 252, 250);
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h1>Edubot</h1>
+        <div id="chat-log"></div>
+        <input type="text" id="user-input" placeholder="Ketik pesan...">
+        <button id="send-button">Kirim</button>
+    </div>
+
+    <script>
+        // Definisikan pola-pola dan responnya
+        var pola = [
+            ['apa itu fotosintesis', ['proses tumbuhan memproduksi makanan sendiri']],
+            ['hukum newton terdiri apa aja', ['hukum newton 1, hukum newton 2, hukum newton 3']],
+            ['siapa penemu teori relativitas', ['albert enstein']],
+            ['aku pergi dulu ya', ['Terima kasih! Sampai jumpa lagi.']],
+        ];
+
+        // Inisialisasi objek Chat dengan pola-pola yang telah didefinisikan
+        var chatbot = new Chat(pola);
+
+        // Fungsi untuk menampilkan pesan pengguna dan respon dari chatbot
+        function sendMessage() {
+            var userInput = document.getElementById('user-input').value;
+
+            // Menambahkan pesan pengguna ke log chat
+            var userMessage = document.createElement('p');
+            userMessage.className = 'user';
+            userMessage.textContent = 'Anda: ' + userInput;
+            document.getElementById('chat-log').appendChild(userMessage);
+
+            // Mendapatkan respon dari chatbot dan menambahkannya ke log chat
+            var botMessage = document.createElement('p');
+            botMessage.className = 'bot';
+            botMessage.textContent = 'Edubot: ' + chatbot.respond(userInput);
+            document.getElementById('chat-log').appendChild(botMessage);
+
+            // Mengosongkan input teks
+            document.getElementById('user-input').value = '';
+        }
+
+        // Menangani klik tombol Kirim
+        document.getElementById('send-button').addEventListener('click', function() {
+            sendMessage();
+        });
+
+        // Menangani tombol Enter pada input teks
+        document.getElementById('user-input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Objek Chat
+        function Chat(pola) {
+            this.pola = pola;
+        }
+
+        // Metode untuk mencari respon berdasarkan pola
+        Chat.prototype.respond = function(userInput) {
+            for (var i = 0; i < this.pola.length; i++) {
+                var pattern = this.pola[i][0];
+                var response = this.pola[i][1];
+
+                if (userInput.match(new RegExp(pattern, 'i'))) {
+                    if (typeof response === 'string') {
+                        return response;
+                    } else if (typeof response === 'function') {
+                        return response(userInput);
+                    } else if (response instanceof Array) {
+                        return response[Math.floor(Math.random() * response.length)];
+                    }
+                }
+            }
+
+            return 'Maaf, saya tidak mengerti. Silakan ajukan pertanyaan lain.';
+        };
+    </script>
+</body>
+</html>
