@@ -86,20 +86,36 @@
         // Definisikan pola-pola dan responnya
         const pola = [
             ['halo', ['hi']],
-            ['kamu siapa', ['halo, aku Edubot. Aku siap bantu menjawab pertanyaanmu']],
+            ['halo kamu siapa', ['halo, aku Edubot. Aku siap bantu menjawab pertanyaanmu']],
+            ['siapa pembuat bot ini?', ['pembuat bot ini rahasia ya ehe']],
+            ['siapa itu satella hana', ['menurutmu siapa ya ehehehehe']],
+            ['gatau', ['aku juga gatau']],
+            ['aku gabut', ['oh kamu gabut? Silahkan coba kamu chat pacarmu aja wkwkwkwkkw', 'oh aku gatau harus ngapain']],
+            ['apakah aku harus surrender hari ini?', ['jangan, kamu harus semangat walaupun emang dunia udah bobrok', 'silahkan tapi resiko ditanggung anda sendiri']],
+            ['apa itu rangka pada manusia', ['organ yang dapat menopang makhluk hidup dan dapat membantu makhluk hidup untuk bergerak. Rangka ada 2 yaitu rangka eksternal dan rangka internal. Manusia memiliki rangka internal, hewan ada yang memiliki rangka internal dan ada pula yang memiliki rangka eksternal.']],
+            ['fungsi rangka manusia', ['melindungi organ dalam tubuh, sistem alat gerak, tempat melekatnya otot dan memberi bentuk tubuh serta menopang tubuh.']],
+            ['sendi dibagi menjadi apa saja', ['Sinartrosis, Amfiartrosis dan Diartrosis.Sinartrosis adalah sendi yang tidak dapat digerakkan, contohnya sendi pada tulang tengkorak. Amfiartrosis adalah sendi yang dapat digerakkan namun terbatas, contohnya sendi antar ruas tulang belakang. Diartrosis adalah sendi yang dapat digerakkan secara bebas. Diartrosis dibagi menjadi 5 yaitu : sendi peluru, pelana, putar, engsel dan geser.']],
             ['apa itu fotosintesis', ['proses tumbuhan memproduksi makanan sendiri']],
-            ['hukum newton terdiri apa aja', ['hukum newton 1, hukum newton 2, hukum newton 3']],
-            ['siapa penemu teori relativitas', ['albert enstein']],
+            ['hukum newton terdiri apa', ['hukum newton 1, hukum newton 2, hukum newton 3']],
+            ['penemu teori relativitas', ['albert enstein']],
             ['aku pergi dulu ya', ['Terima kasih! Sampai jumpa lagi.']],
-            ['tunjukkan gambar atom', ['https://tse3.mm.bing.net/th?id=OIP.fsw_FqGe2-tuxG-fKi_T7QHaFl&pid=Api&P=0&h=180.jpg']],
-            ['tunjukkan logo universitas brawijaya', ['https://tse3.mm.bing.net/th?id=OIP.suxUL5kjq4RGllsq7SPg4AHaHf&pid=Api&P=0&h=180.jpg']],
-            ['tunjukkan rumus sin cos tan', ['https://tse2.mm.bing.net/th?id=OIP.pnksWnkVoyEhh5NwmLJBvAHaDC&pid=Api&P=0&h=180.jpg']],
-            ['tunjukkan tingkatan klasifikasi pada makhluk hidup', ['https://tse2.mm.bing.net/th?id=OIP.0PAKt3f7cegay3XY4EPjUAHaEK&pid=Api&P=0&h=180.jpg']],
-            ['tunjukkan organ reproduksi wanita', ['https://tse4.mm.bing.net/th?id=OIP.EqnZE6vqsEwaWHYtFpDzuwHaFj&pid=Api&P=0&h=180.jpg']],
-            ['tunjukkan organ reproduksi pria', ['https://tse3.mm.bing.net/th?id=OIP.-L6nmk2bK9lDpztH3aJ8-wHaFb&pid=Api&P=0&h=180.jpg']],
-            ['tunjukkan rumus transformasi', ['https://i0.wp.com/soalkimia.com/wp-content/uploads/2020/05/Soal-rotasi-translasi-dan-reformasi.jpg']],
+            ['rumus cepat rambat gelombang bunyi', ['https://tse3.mm.bing.net/th?id=OIP.AZDL0u3vV5lMeWMZms8KRwHaEv&pid=Api&P=0&h=180.jpg']],
+            ['rumus cepat rambat gelombang elektromagnetik', ['https://tse2.mm.bing.net/th?id=OIP.OQarbL_Mjva8uQteQfgreQHaEf&pid=Api&P=0&h=180.jpg']],
+            ['cepat rambat bunyi di berbagai medium', ['https://fisikazone.com/wp-content/uploads/2014/09/Tabel-Cepat-Rambat-Bunyi-Dalam-Beberapa-Medium.jpg']],
+            ['deret nada dan frekuensinya', ['https://lh6.googleusercontent.com/8E_WbzWrjcFR9Gjanos_jazwhK7ku8CcotsCUT_yZhKS63L6tT5NlSAq9b3nekUh0wz9xlCF-wryjtcvCvbuhrs2jwUEAXitdLSjpAEZ0OsVRQ6MMysPRJnaBGwa3jCtskUBE18.jpg']],
+            ['spektrum elektromagnetik', ['https://lh5.googleusercontent.com/9tX8hp6O0sMmF1vfF9LLAyVNMmYi20cGKgoxFj6cQYft6phZdjX5caj6WJ3mN-JN8XeCGUBNlOkJ49ZryIXG5CqrWXkp4bq-VNVwy_kx_w6K1YuuuQy5RXnkuyQ7Q1s0DZvlr10.jpg']],
+            ['isi teks sumpah pemuda', ['Kami putra dan putri Indonesia, mengaku bertumpah darah yang satu, tanah air Indonesia. Kami putra dan putri Indonesia, mengaku berbangsa yanng satu, bangsa Indonesia. Kami putra dan putri Indonesia menjunjung bahasa persatuan, Bahasa Indonesia.', 'https://akcdn.detik.net.id/community/media/visual/2019/10/28/979fdc18-a420-4ef8-bfce-92beeb7b7a12.jpeg?w=700&q=90.jpg']],
+            ['isi piagam jakarta', ['https://img.cdnki.com/mengapa-isi-piagam-jakarta-mengalami-perubahan-pada-sila-pertama---90c6194e3254b32748363b5feeb76158.jpg']],
+            ['isi pembukaan UUD 1945', ['https://1.bp.blogspot.com/-bNzyFj2TOGM/XGGRNPZlyPI/AAAAAAAABM4/8mJw-X9_Ai4IOJDH6wyH1kiHH0ChUrq3gCLcBGAs/s1600/pembukaan_uud_1945.png']],
+            ['gambar atom', ['https://tse3.mm.bing.net/th?id=OIP.fsw_FqGe2-tuxG-fKi_T7QHaFl&pid=Api&P=0&h=180.jpg']],
+            ['logo universitas brawijaya', ['https://tse3.mm.bing.net/th?id=OIP.suxUL5kjq4RGllsq7SPg4AHaHf&pid=Api&P=0&h=180.jpg']],
+            ['rumus sin cos tan', ['https://tse2.mm.bing.net/th?id=OIP.pnksWnkVoyEhh5NwmLJBvAHaDC&pid=Api&P=0&h=180.jpg']],
+            ['tingkatan klasifikasi pada makhluk hidup', ['https://tse2.mm.bing.net/th?id=OIP.0PAKt3f7cegay3XY4EPjUAHaEK&pid=Api&P=0&h=180.jpg']],
+            ['organ reproduksi wanita', ['https://tse4.mm.bing.net/th?id=OIP.EqnZE6vqsEwaWHYtFpDzuwHaFj&pid=Api&P=0&h=180.jpg']],
+            ['organ reproduksi pria', ['https://tse3.mm.bing.net/th?id=OIP.-L6nmk2bK9lDpztH3aJ8-wHaFb&pid=Api&P=0&h=180.jpg']],
+            ['rumus transformasi', ['https://i0.wp.com/soalkimia.com/wp-content/uploads/2020/05/Soal-rotasi-translasi-dan-reformasi.jpg']],
             ['cerita sangkuriang',  ['Cerita Sangkuriang berasal dari cerita Dayang Sumbi yang bermula tinggal di Kahyangan.Dimana diceritakan ada sepasang Dewa dan Dewi yang di hukum menjadi hewan dan menjalani masa hukumannya di bumi.Sang Dewa yang menjelma menjadi anjing jantan bernama si Tumang sedangkan Sang Dewi menjelma jadi babi hutan betina bernama Celeng Wayung Hyang.Suatu ketika seorang raja bernama Sungging Perbangkara pergi berburu. Di tengah hutan, raja ingin buang air kecil dan di tampungnya di batok kelapa.Setelah itu Celeng Wayung Hyang yang kehausan meminumnya. Dan seketika itu babi betina itu hamil dan melahirkan seorang putri cantik.Raja Sungging Perbangkara yang menemukan bayi tersebut membawanya ke istana.Dan dinamai lah putri tersebut Dayang Sumbi. Dayang sumbi tumbuh menjadi gadis yang sangat cantik. Sehingga banyak raja yang melamarnya.Namun, semua lamaran tersebut di tolak dan menjadikan para raja tersebut berperang. Dayang Sumbi lalu memilih mengasingkan diri ke hutan dengan di temani oleh seekor anjing yaitu si Tumang.Di kisahkan saat pengasingannya di hutan Dayang Sumbi saat itu sedang asyik menenun, tempat kainnya jatuh dan ia malas untuk mengambilnya.Dan Dayang Sumbi berujar jika yang mengambilkannya adalah lelaki akan dijadikan suaminya dan jika perempuan akan di jadikan saudaranya.Dan Tumang lah yang membawakannya mau tidak mau Dayang Sumbi harus memenuhi janjinya tersebut.Dan Tumang akhirnya menikah karena suatu janji. Atas pernikahan tersebut lalu lahirlah seorang putra yang tampan bernama Sangkuriang.Setelah cukup remaja Sangkuriang di tugaskan untuk berburu oleh ibunya ke hutan untuk membawa hati rusa. Berangkatlah Sangkuriang dan Tumang ke hutan.Di hutan Sangkuriang ingin memburu babi hutan karena tidak menemukan rusa.Saat Tumang di suruh untuk mengejar dan membunuh babi hutan ia menolak dan malah diam tak bergerak.Karena Tumang tahu bahwa babi itu adalah Wayung Hyang yang merupakan ibu dari dayang Sumbi.Sangkuriang marah dan akhirnya membunuh Tumang dan membawa hati anjing itu untuk di berikan ibunya.Dayang Sumbi menerima hati tersebut membersihkan dan memasaknya. Saat tengah makan tiba-tiba Dayang Sumbi teringat kemana Tumang dan ditanyakanlah kepada Sangkuriang.Lalu Sangkuriang menceritakan telah membunuh Tumang karena ia tidak menaati perintahnya.Sontak hal tersebut membuat Dayang Sumbi marah dan mengatakan Tumang itu adalah ayahmu dan kamu adalah pembunuhnya.Dari kemarahan itu Dayang Sumbi memukulkan centong ke kepala Sangkuriang hingga berdarah-darah dan Sangkuriang kabur ke hutan.Beberapa tahun kemudian Sangkuriang tumbuh menjadi pemburu yang lihai dan pemuda yang sangat tampan.Dan ia tak sengaja Dayang Sumbi di hutan. Sangkuriang yang telah hilang ingatan ia jatuh cinta kepada ibunya sendiri.Dayang Sumbi yang tidak bisa menua karena keturunan dewi, namun, ia mengetahui bahwa pemuda itu adalah Sangkuriang Putranya.Sangkuriang yang tengah jatuh cinta pun melamar Dayang Sumbi.Dan Dayang Sumbi membuat persyaratan yang tak mungkin Sangkuriang penuhi agar menghindari pernikahan tersebut.Dayang Sumbi meminta untuk dibuatkan perahu dan telaga yang harus jadi dalam semalam dengan membendung aliran sungai Citarum. Syarat itu di sanggupi oleh Sangkuriang.Mengetahui hal tersebut Dayang Sumbi pun memukulkan alu ke lesung sebagai pertanda bahwa fajar telah tiba.Alhasil makhluk suruhan Sangkuriang ketakutan dan pergi sebelum tugasnya selesai.Karena gagal memenuhi syarat Sangkuriang mengamuk dan menendang perahu yang di buatnya ke arah utara.Dan dalam sekejap, perahu yang jatuh menelungkup itu berubah menjadi gunung Tangkuban Perahu.']],
-            ['tunjukkan gambar gajah', ['http://1.bp.blogspot.com/-oMM5NfdI55c/VUwwMUXMEiI/AAAAAAAAILY/0p3BuFqyX4Y/s1600/gambar%2Bgajah%2B(4).jpg']]
+            ['gambar gajah', ['http://1.bp.blogspot.com/-oMM5NfdI55c/VUwwMUXMEiI/AAAAAAAAILY/0p3BuFqyX4Y/s1600/gambar%2Bgajah%2B(4).jpg']]
         ];
 
         // Inisialisasi objek Chat dengan pola-pola yang telah didefinisikan
@@ -185,7 +201,7 @@
                 }
             }
 
-            return 'Maaf, saya tidak mengerti. Silakan ajukan pertanyaan lain.';
+            return 'Aku tidak tahu itu, coba tanya bot yang lebih pro dari aku :)';
         };
     </script>
 </body>
